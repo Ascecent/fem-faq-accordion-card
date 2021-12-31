@@ -35,8 +35,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution URL](https://your-solution-url.com)
-- [Live Site URL](https://your-live-site-url.com)
+- [Solution URL](https://www.frontendmentor.io/solutions/faq-accordion-card-with-sass-grid-and-flexbox-fcmA_f1L6)
+- [Live Site URL](https://ascecent.github.io/fem-faq-accordion-card/)
 
 ## My process
 
@@ -54,4 +54,4 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/Ascecent)
+- Frontend Mentor - [@Ascecent](https://www.frontendmentor.io/profile/Ascecent)
