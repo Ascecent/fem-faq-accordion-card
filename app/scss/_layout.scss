@@ -1,0 +1,33 @@
+/*=========================================================
+================      LAYOUT STYLES       =================
+=========================================================*/
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  @include media-breakpoint-up(md) {
+    align-items: center;
+  }
+}
+
+.card {
+  @include media-breakpoint-up(md) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__img {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

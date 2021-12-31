@@ -1,0 +1,175 @@
+/*=========================================================
+================     COMPONENTS STYLES    =================
+=========================================================*/
+
+// ----------------------
+// CARD STYLES
+// ----------------------
+
+.card {
+  background-color: $white;
+  min-width: pxToRem(325);
+  max-width: pxToRem(920);
+  margin: pxToRem(150) pxToRem(25) pxToRem(85);
+  padding: pxToRem(140) pxToRem(25) pxToRem(50);
+  border-radius: pxToRem(24);
+
+  &__img {
+    position: relative;
+    max-width: pxToRem(235);
+    margin: auto;
+
+    img {
+      position: absolute;
+      transform: translateY(-135%);
+
+      @include media-breakpoint-up(md) {
+        position: static;
+      }
+
+      width: 100%;
+    }
+
+    &::before {
+      @include pseudo-element;
+      height: pxToRem(180);
+
+      transform: translateY(-115%);
+      background: url("../app/assets/images/bg-pattern-mobile.svg")
+        bottom/contain no-repeat;
+    }
+
+    @include media-breakpoint-up(xxsm) {
+      max-width: pxToRem(350);
+
+      img {
+        transform: translateY(-125%);
+      }
+    }
+  }
+
+  &__title {
+    font: {
+      size: $fontHeading;
+      weight: $fontBold;
+    }
+
+    color: $veryDarkDesaturatedBlue;
+    margin: 0 0 pxToRem(20);
+    text-align: center;
+  }
+
+  &__item {
+    padding: pxToRem(20) 0;
+    border-bottom: 1px solid $lightGrayishBlue;
+  }
+
+  &__input {
+    display: none;
+
+    &:checked {
+      ~ .card__description {
+        opacity: 1;
+        visibility: visible;
+
+        height: 50px;
+
+        margin-top: pxToRem(20);
+      }
+
+      ~ .card__label {
+        .card__icon {
+          transform: rotate(180deg);
+        }
+
+        .card__text {
+          font-weight: $fontBold;
+        }
+      }
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+  }
+
+  &__text {
+    font-weight: $fontRegular;
+    color: $veryDarkGrayishBlue;
+
+    transition: font-weight 400ms ease-in-out, color 400ms ease-in-out;
+
+    &:hover {
+      color: $softRed;
+    }
+  }
+
+  &__icon {
+    background: url("../app/assets/images/icon-arrow-down.svg") center/contain
+      no-repeat;
+
+    width: pxToRem(10);
+    height: pxToRem(10);
+
+    transition: transform 300ms ease-in-out;
+  }
+
+  &__description {
+    color: $darkGrayishBlue;
+    line-height: 1.5;
+
+    opacity: 0;
+    pointer-events: none;
+
+    height: 0;
+    margin: 0;
+
+    transition: height 600ms ease-in-out, opacity 500ms ease-in-out,
+      margin-top 400ms ease-in-out;
+  }
+
+  @include media-breakpoint-up(md) {
+    padding: 0;
+
+    &__img {
+      margin: 0;
+      max-width: none;
+
+      img {
+        transform: none;
+        width: 150%;
+        position: relative;
+        right: pxToRem(78.4);
+      }
+
+      &::before {
+        align-self: start;
+        transform: none;
+        background-image: url("../app/assets/images/bg-pattern-desktop.svg");
+        background-size: 160%;
+        background-position: pxToRem(-360) pxToRem(-140);
+        height: 100%;
+      }
+    }
+
+    &__wrapper {
+      padding: pxToRem(70) pxToRem(95) pxToRem(80) 0;
+    }
+
+    &__title {
+      text-align: left;
+    }
+
+    &__input {
+      &:checked {
+        ~ .card__description {
+          margin-top: pxToRem(16);
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    margin: 0;
+  }
+}
