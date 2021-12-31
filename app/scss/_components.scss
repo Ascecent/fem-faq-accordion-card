@@ -130,6 +130,7 @@
 
   @include media-breakpoint-up(md) {
     padding: 0;
+    box-shadow: 0 pxToRem(35) 1.1rem 0 rgba($black, 0.2);
 
     &__img {
       margin: 0;
@@ -143,7 +144,7 @@
       }
 
       &::before {
-        align-self: start;
+        align-self: flex-start;
         transform: none;
         background-image: url("../app/assets/images/bg-pattern-desktop.svg");
         background-size: 160%;
